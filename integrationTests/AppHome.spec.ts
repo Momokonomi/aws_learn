@@ -8,14 +8,15 @@ test.describe('/のテスト', () => {
     // --- タイトル ---
     await expect(page).toHaveTitle(/ホームページ/);
     // --- ヘッダー ---
-    expect(await page.getByRole('heading', { name: 'home' })).toBeAttached();
+    await expect(page.getByRole('heading', { name: 'home' })).toBeAttached();
     // --- カレンダー遷移ボタン ---
-    expect(await page.getByRole('button', { name: 'カレンダー' })).toBeAttached();
+    await expect(page.getByRole('button', { name: 'カレンダー' })).toBeAttached();
     // --- fizBazz機能 ---
-    expect(await page.getByTestId('fizbazz_countup_btn')).toBeAttached();
-    expect(await page.getByTestId('fizbazz_counter')).toHaveText('0');
-    expect(await page.getByTestId('fizbazz_item_container')).toBeEmpty();
+    await expect(page.getByTestId('fizbazz_countup_btn')).toBeAttached();
+    await expect(page.getByTestId('fizbazz_counter')).toHaveText('0');
+    await expect(page.getByTestId('fizbazz_item_container')).toBeEmpty();
   });
+
   test('カレンダーボタンを押下するとカレンダー画面に遷移する', async ({ page }) => {
     // 移動
     await page.goto('/');
