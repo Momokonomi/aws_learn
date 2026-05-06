@@ -1,5 +1,5 @@
-import process from 'node:process'
-import { defineConfig, devices } from '@playwright/test'
+import process from 'node:process';
+import { defineConfig, devices } from '@playwright/test';
 
 /**
  * Read environment variables from file.
@@ -11,7 +11,7 @@ import { defineConfig, devices } from '@playwright/test'
  * See https://playwright.dev/docs/test-configuration.
  */
 export default defineConfig({
-  testDir: './e2e',
+  testDir: './integrationTests',
   /* Maximum time one test can run for. */
   timeout: 30 * 1000,
   expect: {
@@ -107,4 +107,4 @@ export default defineConfig({
     port: process.env.CI ? 4173 : 5173,
     reuseExistingServer: !process.env.CI,
   },
-})
+});
