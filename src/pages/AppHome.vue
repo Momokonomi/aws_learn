@@ -34,7 +34,7 @@ const { count, countUp, fizBazzList } = useFizBazz();
     <v-btn text="countUp" @click="countUp" data-testid="fizbazz_countup_btn"></v-btn>
     <span data-testid="fizbazz_counter">{{ count }}</span>
     <v-card>
-      <v-list>
+      <v-list data-testid="fizbazz_item_container">
         <v-list-item
           v-for="(item, i) in fizBazzList"
           :key="i"

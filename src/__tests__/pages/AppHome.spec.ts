@@ -24,9 +24,9 @@ describe('AppHome', () => {
       const wrapper = render();
 
       expect(wrapper.find('[data-testid="fizbazz_countup_btn"]').exists()).toBe(true);
-      expect(wrapper.find('[data-testid="fizbazz_counter"]').text()).toBe('0');
 
-      expect(wrapper.find('[data-testid="fizbazz_3fiz"]').exists()).toBe(false);
+      expect(wrapper.find('[data-testid="fizbazz_counter"]').text()).toBe('0');
+      expect(wrapper.find('[data-testid="fizbazz_item_container"]').text()).toBe('');
     });
     it('ボタンを1回押下するとカウントが1になる', async () => {
       const wrapper = render();
@@ -34,6 +34,7 @@ describe('AppHome', () => {
       await countupBtn.trigger('click');
 
       expect(wrapper.find('[data-testid="fizbazz_counter"]').text()).toBe('1');
+      expect(wrapper.find('[data-testid="fizbazz_item_container"]').text()).toBe('');
     });
     it.each([
       [3, 'fiz'],

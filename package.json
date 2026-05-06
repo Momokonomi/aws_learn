@@ -8,6 +8,7 @@
     "build": "run-p type-check \"build-only {@}\" --",
     "preview": "vite preview",
     "test:unit": "vitest run",
+    "test:mutation": "stryker run",
     "test:e2e": "playwright test",
     "build-only": "vite build",
     "type-check": "vue-tsc --build",
@@ -24,6 +25,8 @@
   },
   "devDependencies": {
     "@playwright/test": "^1.59.1",
+    "@stryker-mutator/core": "^9.6.1",
+    "@stryker-mutator/vitest-runner": "^9.6.1",
     "@tsconfig/node24": "^24.0.4",
     "@types/jsdom": "^28.0.1",
     "@types/node": "^24.12.2",
